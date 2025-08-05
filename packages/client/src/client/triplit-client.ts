@@ -435,7 +435,7 @@ export class TriplitClient<M extends Models<M> = Models> {
    *
    * @param collectionName - The name of the collection to insert into
    * @param object - The entity to insert
-   * @returns The transaction ID and the inserted entity, if successful
+   * @returns - The inserted entity, if successful
    */
   async insert<CN extends CollectionNameFromModels<M>>(
     collectionName: CN,
@@ -456,7 +456,6 @@ export class TriplitClient<M extends Models<M> = Models> {
    * @param collectionName - The name of the collection to update
    * @param entityId - The id of the entity to update
    * @param updater - A function that provides the current entity and allows you to modify it
-   * @returns The transaction ID
    */
   async update<CN extends CollectionNameFromModels<M>>(
     collectionName: CN,
@@ -477,7 +476,6 @@ export class TriplitClient<M extends Models<M> = Models> {
    *
    * @param collectionName - The name of the collection to delete from
    * @param entityId - The id of the entity to delete
-   * @returns The transaction ID
    */
   async delete<CN extends CollectionNameFromModels<M>>(
     collectionName: CN,
