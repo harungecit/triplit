@@ -79,11 +79,14 @@ export function triplitRoute<
       const { results: initialResults, query } = useLoaderData({
         strict: false,
       });
+      // TODO: latestQuery not staying up to date
       const [latestQuery, setQuery] = useState<Q>(query);
+      // TODO: how do we expose updateQuery?
       const updateQuery = useCallback((newQuery: Q) => {
         setQuery(newQuery);
       }, []);
-      const resp = useQuery(client, latestQuery);
+      // TODO: use latestQuery here
+      const resp = useQuery(client, query);
       const results = useMemo(() => {
         const latestResults = resp.results ?? initialResults;
         return latestResults ?? [];
